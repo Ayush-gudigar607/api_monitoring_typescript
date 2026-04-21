@@ -29,7 +29,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./scripts/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+      - mongo_data:/data/db
     networks:
       - api_monitor_network
     restart: unless-stopped
@@ -61,6 +61,8 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=admin
     ports:
       - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
     networks:
       - api_monitor_network
     restart: unless-stopped

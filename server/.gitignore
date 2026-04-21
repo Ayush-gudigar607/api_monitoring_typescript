@@ -4,5 +4,6 @@ dist
 logs
 node_modules
 dist
+tsconfig.json
 
 
