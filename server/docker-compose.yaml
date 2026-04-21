@@ -98,7 +98,7 @@ services:
     volumes:
       - ./logs:/app/logs
     networks:
-      - api-monitoring-network
+      - api_monitor_network
     depends_on:
       postgres:
         condition: service_healthy
@@ -113,13 +113,13 @@ services:
 
 volumes:
   postgres_data:
-    driver:local
+    driver: local
   rabbitmq_data:
-   driver:local
+    driver: local
   mongo_data:
-    driver:local
+    driver: local
   pgadmin_data:
-    driver:local
+    driver: local
   
 networks:
   api_monitor_network:
