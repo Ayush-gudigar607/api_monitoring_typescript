@@ -1,6 +1,12 @@
 import mongoose,{Document,Schema,Model} from "mongoose";
 
 //Interface for the document
+//3. 💡 Why we used Document?
+//This gives you:
+// _id
+// .save()
+// .toObject()
+// Mongoose document methods
 export interface ApiHits extends Document{
     eventId:string;
     timestamp:Date;
@@ -102,6 +108,6 @@ apiHitSchma.index(
 
 // 4. Model
 const ApiHits:Model<ApiHits> = mongoose.model<ApiHits>("ApiHits", apiHitSchma);
-    
+
 export default ApiHits;
 
