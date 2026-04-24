@@ -1,6 +1,11 @@
 node_modules
-dist
-logs
-.git
-.env
 npm-debug.log
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
+.env
+logs
+tests
+coverage
+README.md
