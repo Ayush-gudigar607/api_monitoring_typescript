@@ -1,7 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import logger from './utils/logger';
+import { logger } from './shared/config/logger';
 
 const app=express();
 
