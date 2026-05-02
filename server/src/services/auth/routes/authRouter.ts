@@ -18,7 +18,7 @@ const router: Router = express.Router();
 /* ================= DEPENDENCIES ================= */
 
 const { controllers } = dependencies;
-const authController = controllers.authController; // ✅ fixed
+const authController = controllers.authController; 
 
 /* ================= ROUTES ================= */
 
