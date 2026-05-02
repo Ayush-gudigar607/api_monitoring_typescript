@@ -1,8 +1,10 @@
-   export default abstract class BaseRepository<T> {
- //abstract forces child classes to implement methods
-    protected model: T;
+import { Model } from "mongoose";
 
-    constructor(model: any) {
+export default abstract class BaseRepository<T> {
+ //abstract forces child classes to implement methods
+    protected model: Model<T>;
+
+    constructor(model: Model<T>) {
         if (!model) {
             throw new Error("Model is required");
         }
@@ -11,11 +13,12 @@
 
     abstract create(data: Partial<T>): Promise<T>;
 
-    abstract findById(data: string): Promise<T | null>;
+    abstract findById(id: string): Promise<T | null>;
 
-    abstract findByUsername(data: string): Promise<T | null>;
+    abstract findByUsername(username: string): Promise<T | null>;
 
-    abstract findByEmail(data: string): Promise<T | null>;
+    abstract findByEmail(email: string): Promise<T | null>;
 
-    abstract findByAll(data: any): Promise<T[]>;
+    abstract findAll(page?: number, limit?: number): Promise<T[]>;
+    
 }
