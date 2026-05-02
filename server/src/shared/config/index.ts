@@ -32,5 +32,12 @@ export const config:Config = {
     //Rate limiting
     rate_limit_window_ms:parseInt(process.env.RATE_LIMIT_WINDOW_MS || '900000', 10), // 1 hour
     rate_limit_max:parseInt(process.env.RATE_LIMIT_MAX || '1000', 10), // limit each IP to 1000 requests per windowMs
+
+    
+   // Cookie settings
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production" ? 'true' : 'false',
+  expireIn: 24 * 60 * 60 * 1000,
+   
 }
 
