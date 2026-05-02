@@ -119,3 +119,5 @@ class RabbitMQConnection {
         }
     }
 }
+
+export default new RabbitMQConnection();
