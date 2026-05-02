@@ -17,6 +17,9 @@ const productionFormat = winston.format.combine(baseFormat);
 
 // Development format
 const developmentFormat = winston.format.combine(
+  winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+  winston.format.errors({ stack: true }),
+  winston.format.splat(),
   winston.format.colorize(),
   winston.format.printf(({ timestamp, level, message, stack }) => {
     return `${timestamp} ${level}: ${stack || message}`;
