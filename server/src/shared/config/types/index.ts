@@ -30,6 +30,6 @@ export interface Config {
     rate_limit_max:number,
 
     httpOnly:boolean,
-    secure:string, //only send cookie over https in production
+    secure:boolean, //only send cookie over https in production
     expireIn:number//1 DAY IN MILLISECOND
 }

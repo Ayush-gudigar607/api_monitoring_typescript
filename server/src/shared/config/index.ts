@@ -36,7 +36,7 @@ export const config:Config = {
     
    // Cookie settings
   httpOnly: true,
-  secure: process.env.NODE_ENV === "production" ? 'true' : 'false',
+  secure: process.env.NODE_ENV === "production",
   expireIn: 24 * 60 * 60 * 1000,
    
 }
